@@ -10,8 +10,14 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
-            title: 'test',
-            filename: '[name].html'
+            title: 'home',
+            filename: 'home.html',
+            chunks: ['home']
+        }),
+        new HtmlWebpackPlugin({
+            title: 'introduce',
+            filename: 'introduce.html',
+            chunks: ['introduce']
         })
     ],
     output: {
@@ -21,10 +27,5 @@ module.exports = {
     module: {
 
     },
-    devtool: 'inline-souce-map',
-    devServer: {
-        contentBase: path.join(__dirname, "dist"),
-        compress: true,
-        hot: true
-    }
+    mode: 'production'
 }
